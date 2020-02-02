@@ -1,10 +1,9 @@
-<form
-  *ngIf="!isSubmitted; else spinner"
-  class="card"
-  [formGroup]="form"
-  (ngSubmit)="submit()"
->
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
   <h2>Войти в панель администратора</h2>
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+    {{ error }}
+  </div>
+
   <div
     class="form-control"
     [ngClass]="{
@@ -56,9 +55,3 @@
     Войти
   </button>
 </form>
-
-<ng-template #spinner>
-  <div style="display: flex; justify-content: center;">
-    <mat-spinner></mat-spinner>
-  </div>
-</ng-template>
