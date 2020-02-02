@@ -10,6 +10,7 @@ import { CreatePageComponent } from "./create-page/create-page.component";
 import { EditPageComponent } from "./edit-page/edit-page.component";
 import { AuthService } from "./shared/services/auth.service";
 import { SharedModule } from "../shared/shared.module";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SharedModule } from "../shared/shared.module";
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    MatProgressSpinnerModule,
     RouterModule.forChild([
       {
         path: "",

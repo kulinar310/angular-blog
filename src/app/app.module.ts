@@ -8,6 +8,10 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { PostPageComponent } from "./post-page/post-page.component";
 import { PostComponent } from "./shared/components/post/post.component";
 import { SharedModule } from "./shared/shared.module";
+import {
+  NoopAnimationsModule,
+  BrowserAnimationsModule
+} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -17,7 +21,13 @@ import { SharedModule } from "./shared/shared.module";
     PostPageComponent,
     PostComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    NoopAnimationsModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

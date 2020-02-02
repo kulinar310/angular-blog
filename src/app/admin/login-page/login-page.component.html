@@ -1,4 +1,9 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+<form
+  *ngIf="!isSubmitted; else spinner"
+  class="card"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
   <h2>Войти в панель администратора</h2>
   <div
     class="form-control"
@@ -43,7 +48,17 @@
       </small>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid || isSubmitted"
+  >
     Войти
   </button>
 </form>
+
+<ng-template #spinner>
+  <div style="display: flex; justify-content: center;">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
