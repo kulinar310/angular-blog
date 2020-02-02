@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -294,5 +295,11 @@ table th {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
